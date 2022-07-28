@@ -1,0 +1,3 @@
+User-agent: * 
+Disallow: /system/
+Sitemap: http://fresgrup.com/sitemap-es.xml

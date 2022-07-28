@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+	<script type="text/javascript" src="tinymce.min.js"></script>
+   
+	<script type="text/javascript">
+    
+		tinymce.init({
+      
+			selector: "#Meditor",
+      
+			language_url : 'es.js',
+			 
+			skin : "charcoal",
+						 
+			file_browser_callback : function(field_name, url, type, win){
+							
+				var filebrowser = "filebrowser.php";
+							
+				filebrowser += (filebrowser.indexOf("?") < 0) ? "?type=" + type : "&type=" + type;
+							
+				tinymce.activeEditor.windowManager.open({
+								
+					title : "Insertar fichero",
+							
+					width : 520,
+							
+					height : 400,
+							
+					url : filebrowser
+							
+				}, {
+							
+					window : win,
+							
+					input : field_name
+						
+				});
+						
+				return false;
+					
+			},
+			 	
+			plugins : 'advlist autolink link image lists charmap print preview table',
+			  
+		});
+    
+	</script>
+	 
+</head>
+<body> 
+    <form method="post">
+        <textarea id="Meditor"></textarea>
+    </form>
+</body>
+</html>
